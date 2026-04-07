@@ -4,7 +4,6 @@ from apis.routes import router
 
 app = FastAPI(title="Agentic CX Simulator Server")
 
-@app.on_event("startup")
 def startup_event():
     init_db()
     seed_database()
