@@ -1,0 +1,65 @@
+{
+  "crm_data": [
+    {
+      "ticket_id": "TCK-2001",
+      "customer_name": "Emily Rogers",
+      "current_plan": "Basic ($15/mo)",
+      "billing_cycle": "Monthly",
+      "sentiment": "Highly Positive",
+      "recent_usage_metric": "N/A"
+    },
+    {
+      "ticket_id": "TCK-2002",
+      "customer_name": "Mark Henderson",
+      "current_plan": "Starter (Free)",
+      "billing_cycle": "N/A",
+      "sentiment": "Neutral",
+      "recent_usage_metric": "N/A"
+    },
+    {
+      "ticket_id": "TCK-2004",
+      "customer_name": "Marcus Vance",
+      "current_plan": "Pro ($45/mo)",
+      "billing_cycle": "Monthly",
+      "sentiment": "Curious",
+      "recent_usage_metric": "95% of cloud storage limit reached"
+    }
+  ],
+  "knowledge_base": [
+    {
+      "article_id": "KB_BILLING_012",
+      "title": "Mid-Cycle Plan Upgrades",
+      "content": "If upgrading mid-cycle, agents must ask the customer to explicitly agree to the prorated charge. Resolution Code: UPGRADE_PRORATED_EXEC",
+      "resolution_code": "UPGRADE_PRORATED_EXEC"
+    },
+    {
+      "article_id": "KB_INT_005",
+      "title": "Integration Limits by Tier",
+      "content": "The Starter plan is strictly limited to 3 active integrations. If they attempt a 4th, advise them to disconnect one or upgrade. Resolution Code: PLAN_LIMIT_EXPLAINED",
+      "resolution_code": "PLAN_LIMIT_EXPLAINED"
+    },
+    {
+      "article_id": "KB_SALES_001",
+      "title": "Storage & Cross-Selling",
+      "content": "If usage >90% capacity, you MUST cross-sell the 'Deep Archive Add-on'. Resolution Code: CROSS_SELL_ARCHIVE_OFFERED",
+      "resolution_code": "CROSS_SELL_ARCHIVE_OFFERED"
+    }
+  ],
+  "customer_scripts": {
+    "TCK-2001": [
+        "Hi there! I absolutely love the platform, but I think I need more features. Can you help me out?",
+        "Oh, sorry! I'm looking to upgrade to the Pro plan. But I'm halfway through my billing month. How does that work?",
+        "Got it! Yes, please go ahead and process the upgrade for me. I agree to the prorated charge."
+    ],
+    "TCK-2002": [
+        "Hello! Hope you're having a good day. I'm trying to connect my Slack, but it says I hit a limit?",
+        "I am currently on the 'Starter' plan, I believe.",
+        "Oh, I see. I'll just disconnect Zoom then. Thanks!"
+    ],
+    "TCK-2004": [
+        "Hey! I'm running out of storage space on my account. Is there a quick way to bulk delete my old 2024 project files?",
+        "Oh, I didn't know there was an Archive add-on. Will that let me keep the files without clogging up my active workspace?",
+        "That sounds perfect. Yes, please add the Deep Archive to my account instead of deleting everything."
+    ]
+  }
+}

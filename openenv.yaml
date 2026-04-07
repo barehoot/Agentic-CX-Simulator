@@ -1,0 +1,25 @@
+name: "agentic-cx-simulator"
+version: "1.0.0"
+description: >
+  An agentic environment simulating a high-volume customer support triage center. 
+  The AI agent must use tools (CRM, Knowledge Base, Customer Chat) to resolve 
+  tickets, perform security checks, and execute cross-sells before the customer's 
+  patience depletes.
+domain: "customer-service-automation"
+tags: ["tool-use", "RAG", "reasoning", "cross-selling"]
+
+tasks:
+  - id: "task_01_easy"
+    name: "The Friendly Upgrade"
+    difficulty: "easy"
+    description: "Guide a customer through a mid-cycle upgrade by explicitly asking for prorated charge agreement as per policy."
+  
+  - id: "task_02_medium"
+    name: "The Plan Limit Constraint"
+    difficulty: "medium"
+    description: "Diagnose an integration error by checking the CRM for plan limits and referencing the KB for exact policy rules."
+  
+  - id: "task_03_hard"
+    name: "The Strategic Cross-Sell"
+    difficulty: "hard"
+    description: "Resolve a storage limit inquiry while successfully identifying a cross-sell opportunity in the CRM and pitching the Archive Add-on."
