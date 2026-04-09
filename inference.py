@@ -115,11 +115,17 @@ def evaluate_task(task_id: str) -> float:
         
         time.sleep(0.5)
 
-    # Calculate final normalized score [0.0 - 1.0]
-    # (Assuming your max possible cumulative reward per task is around 2.0 based on your cx_environment.py)
-    max_possible_reward = 2.0 
-    raw_total = sum(rewards)
-    normalized_score = max(0.0, min(raw_total / max_possible_reward, 1.0))
+        # Calculate final normalized score strictly within (0.0, 1.0)
+        max_possible_reward = 2.0 
+        raw_total = sum(rewards)
+    
+        # First, get the raw ratio
+        raw_normalized = raw_total / max_possible_reward
+    
+        # CRITICAL FIX: Clamp the score strictly between 0.01 and 0.99
+        # This guarantees the score never hits exactly 0.0 or 1.0
+        normalized_score = max(0.01, min(raw_normalized, 0.99))
+    
     success = normalized_score > 0.5
 
     log_end(success=success, steps=step_count, score=normalized_score, rewards=rewards)
